@@ -2,11 +2,15 @@ package com.dk.project.uber.uberApp.entities;
 
 import com.dk.project.uber.uberApp.entities.enums.Role;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "app_user")
 public class User {
 
