@@ -2,6 +2,7 @@ package com.dk.project.uber.uberApp.entities;
 
 import com.dk.project.uber.uberApp.entities.enums.PaymentMethod;
 import com.dk.project.uber.uberApp.entities.enums.RideRequestStatus;
+import com.dk.project.uber.uberApp.entities.enums.RideStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,8 +14,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-public class RideRequest {
-
+public class Ride {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,17 +26,23 @@ public class RideRequest {
     private Point dropOffLocation;
 
     @CreationTimestamp
-    private LocalDateTime requestedTime;
+    private LocalDateTime createdTime;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Rider rider;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Driver driver;
 
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
 
     @Enumerated(EnumType.STRING)
-    private RideRequestStatus rideRequestStatus;
+    private RideStatus rideStatus;
 
+    private Double fare;
 
+    private LocalDateTime startedAt;
 
+    private LocalDateTime endedAt;
 }
