@@ -1,9 +1,8 @@
 package com.dk.project.uber.uberApp.dto;
 
-import com.dk.project.uber.uberApp.entities.Driver;
 import com.dk.project.uber.uberApp.entities.Rider;
 import com.dk.project.uber.uberApp.entities.enums.PaymentMethod;
-import com.dk.project.uber.uberApp.entities.enums.RideStatus;
+import com.dk.project.uber.uberApp.entities.enums.RideRequestStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,30 +15,21 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RideDto {
-
+public class RideRequestDto {
 
     private Long id;
 
-
     private Point pickupLocation;
-
 
     private Point dropOffLocation;
 
-    private LocalDateTime createdTime;
 
-    private RiderDto rider;
+    private LocalDateTime requestedTime;
 
-    private Driver driver;
+    private Rider rider;
 
     private PaymentMethod paymentMethod;
 
-    private RideStatus rideStatus;
+    private RideRequestStatus rideRequestStatus;
 
-    private Double fare;
-
-    private LocalDateTime startedAt;
-
-    private LocalDateTime endedAt;
 }
