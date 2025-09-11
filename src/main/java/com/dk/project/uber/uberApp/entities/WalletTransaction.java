@@ -2,10 +2,9 @@ package com.dk.project.uber.uberApp.entities;
 
 import com.dk.project.uber.uberApp.entities.enums.TransactionMethod;
 import com.dk.project.uber.uberApp.entities.enums.TransactionType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
 
 @Entity
 public class WalletTransaction {
@@ -19,4 +18,18 @@ public class WalletTransaction {
     private TransactionType transactionType;
 
     private TransactionMethod transactionMethod;
+
+    @OneToOne
+    private Ride ride;
+
+    private String transactionId;
+
+    @ManyToOne
+    private Wallet wallet;
+
+    private LocalDateTime timestamp;
+
+
+
+
 }
