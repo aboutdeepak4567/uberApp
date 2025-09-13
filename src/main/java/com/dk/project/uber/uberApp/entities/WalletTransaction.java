@@ -3,6 +3,7 @@ package com.dk.project.uber.uberApp.entities;
 import com.dk.project.uber.uberApp.entities.enums.TransactionMethod;
 import com.dk.project.uber.uberApp.entities.enums.TransactionType;
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -27,6 +28,7 @@ public class WalletTransaction {
     @ManyToOne
     private Wallet wallet;
 
+    @CreationTimestamp
     private LocalDateTime timestamp;
 
 
