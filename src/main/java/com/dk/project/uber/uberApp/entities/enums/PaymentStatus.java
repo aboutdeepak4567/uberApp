@@ -1,4 +1,4 @@
-package com.dk.project.uber.uberApp.dto;
+package com.dk.project.uber.uberApp.entities.enums;
 
 public enum PaymentStatus {
     PENDING, CONFIRMED , REFUNDED
