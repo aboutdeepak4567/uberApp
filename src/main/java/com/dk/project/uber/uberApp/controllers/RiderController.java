@@ -13,6 +13,7 @@ public class RiderController {
 
     @PostMapping
     public RideRequestDto requestRide(@RequestBody RideRequestDto rideRequestDto){
+        return rideRequestDto;
 
     }
 
